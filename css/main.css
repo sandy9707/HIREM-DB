@@ -1,0 +1,390 @@
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* 添加平滑滚动 */
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* 导航栏样式 */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #3498db;
+}
+
+/* 页面通用样式 */
+.page {
+    width: 100%;
+    position: relative;
+}
+
+/* 第一页特定样式 */
+#page1 {
+    height: 100vh; /* 第一页保持100%视窗高度 */
+    padding-top: 60px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    overflow: hidden; /* 第一页禁止滚动 */
+}
+
+/* 第二页特定样式 */
+#page2 {
+    min-height: 100vh; /* 最小高度为100%视窗高度 */
+    padding-top: 60px;
+    background-color: #f8f9fa;
+    overflow-y: auto; /* 允许垂直滚动 */
+}
+
+/* 容器样式 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 垂直居中内容 */
+}
+
+#page1 .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#page2 .container {
+    height: auto; /* 允许容器高度自适应内容 */
+    padding: 40px 20px;
+}
+
+/* 首页概览部分样式 */
+.hero-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.stat-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.stat-box h3 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.intro-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.intro-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro-text {
+    line-height: 1.8;
+    color: #333;
+}
+
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.module-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+}
+
+.module-card h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.module-card p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .module-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 首页标题样式 */
+#page1 h1 {
+    font-size: 4.5rem;  /* 更大的标题字体 */
+    font-weight: 700;   /* 更粗的字重 */
+    color: #2c3e50;     /* 深色系的字体颜色 */
+    margin-bottom: 20px;/* 增加与副标题的间距 */
+    letter-spacing: 1px;/* 增加字间距 */
+}
+
+/* 副标题样式 */
+.subtitle {
+    font-size: 1.8rem;  /* 更大的副标题字体 */
+    color: #34495e;     /* 稍微浅一点的颜色 */
+    font-weight: 400;   /* 适中的字重 */
+    margin-bottom: 40px;/* 增加与统计数据的间距 */
+    line-height: 1.4;   /* 适当的行高 */
+}
+
+/* 确保容器样式支持居中显示 */
+#page1 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* 第二页标题和文本样式 */
+.intro-content h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 30px;  /* 标题下方间距 */
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #34495e;
+    margin-bottom: 50px;  /* 增加段落与"核心模块"的间距 */
+}
+
+.intro-text h3 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;  /* 减少"核心模块"与下方卡片的间距 */
+}
+
+/* 实验室介绍部分样式 */
+.lab-intro {
+    margin-top: 60px;
+    padding: 40px 0;
+}
+
+.lab-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.lab-content h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.lab-text {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.lab-text h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.lab-subtitle {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.lab-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #34495e;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .lab-content h2 {
+        font-size: 2rem;
+    }
+    
+    .lab-text h3 {
+        font-size: 1.5rem;
+    }
+    
+    .lab-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .lab-description {
+        font-size: 1rem;
+    }
+}
+
+/* 底部链接区域样式 */
+.footer-links {
+    margin-top: 60px;
+    padding: 40px 0;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eee;
+}
+
+.links-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+.link-group {
+    flex: 1;
+    min-width: 120px;
+}
+
+.link-group h4 {
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.link-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.link-group ul li {
+    margin-bottom: 12px;
+}
+
+.link-group ul li a {
+    color: #7f8c8d;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.link-group ul li a:hover {
+    color: #3498db;
+}
+
+.qr-code {
+    text-align: center;
+    margin-left: 40px;
+}
+
+.qr-code img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+.qr-code p {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+/* 版权信息样式 */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .links-container {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    
+    .link-group {
+        flex: 0 0 calc(50% - 15px);
+    }
+    
+    .qr-code {
+        margin: 30px auto 0;
+    }
+}
