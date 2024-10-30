@@ -41,6 +41,11 @@ body {
     font-size: 24px;
     font-weight: bold;
     color: #2c3e50;
+    text-decoration: none;  /* 移除下划线 */
+}
+
+.logo:hover {
+    cursor: pointer;      /* 鼠标悬停时显示手型光标 */
 }
 
 .nav-links {
