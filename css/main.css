@@ -41,17 +41,17 @@ body {
     font-size: 24px;
     font-weight: bold;
     color: #2c3e50;
-    text-decoration: none;  /* 移除下划线 */
-}
-
-.logo:hover {
-    cursor: pointer;      /* 鼠标悬停时显示手型光标 */
+    text-decoration: none;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     gap: 30px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    align-items: center;
 }
 
 .nav-links li a {
@@ -100,10 +100,13 @@ body {
 
 #page1 .container {
     height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 #page2 .container {
@@ -121,8 +124,8 @@ body {
 }
 
 .stats-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
     gap: 30px;
     margin-top: 50px;
 }
@@ -131,14 +134,20 @@ body {
     background: white;
     padding: 30px;
     border-radius: 10px;
-    text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    flex: 1;
+    max-width: 300px;
 }
 
 .stat-box h3 {
     font-size: 2rem;
     color: #2c3e50;
     margin-bottom: 0.5rem;
+}
+
+.stat-box p {
+    color: #666;
+    margin: 0;
 }
 
 .intro-section {
@@ -157,10 +166,12 @@ body {
 }
 
 .module-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    display: flex;
+    flex-wrap: nowrap;     /* 确保不换行 */
+    justify-content: space-between;  /* 改用space-between让4个卡片均匀分布 */
+    gap: 20px;             /* 稍微减小间距以适应4个卡片 */
     margin-top: 20px;
+    width: 100%;           /* 确保占满容器宽度 */
 }
 
 .module-card {
@@ -169,6 +180,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    flex: 1;              /* 让每个卡片平均分配空间 */
+    min-width: 0;         /* 允许卡片缩小 */
 }
 
 .module-card:hover {
@@ -188,7 +201,13 @@ body {
 /* 响应式设计 */
 @media (max-width: 768px) {
     .module-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .module-card {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
@@ -206,14 +225,13 @@ body {
     font-size: 1.8rem;  /* 更大的副标题字体 */
     color: #34495e;     /* 稍微浅一点的颜色 */
     font-weight: 400;   /* 适中的字重 */
-    margin-bottom: 40px;/* 增加与统计数据的间距 */
+    margin-bottom: 50px;/* 增加与统计数据的间距 */
     line-height: 1.4;   /* 适当的行高 */
 }
 
 /* 确保容器样式支持居中显示 */
 #page1 .container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -304,7 +322,7 @@ body {
     }
 }
 
-/* 底部链接区域样式 */
+/* 底部链区域样式 */
 .footer-links {
     margin-top: 60px;
     padding: 40px 0;
@@ -383,7 +401,7 @@ footer p {
 }
 
 footer .copyright {
-    margin-top: 12px;    /* 版权信息上方多加点间距 */
+    margin-top: 12px;    /* 版权信息上方加点间距 */
 }
 
 /* 响应式设计 */
@@ -454,7 +472,7 @@ footer .copyright {
     margin-left: auto;
 }
 
-/* 底部链接区域响应式 */
+/* 底链接区域响应式 */
 @media (max-width: 768px) {
     .links-container {
         flex-direction: column;
@@ -485,25 +503,13 @@ footer .copyright {
     
     /* 统计数据竖排显示 */
     .stats-container {
-        display: flex;
-        flex-direction: column;  /* 改为竖排 */
+        grid-template-columns: 1fr;
         gap: 20px;
-        width: 100%;
-        max-width: 300px;  /* 限制最大宽度 */
-        margin: 0 auto;    /* 居中显示 */
+        max-width: 300px;
     }
     
     .stat-box {
-        width: 100%;
-        padding: 20px;     /* 稍微减小内边距 */
-    }
-    
-    .stat-box h3 {
-        font-size: 1.8rem; /* 数值字体也适当调小 */
-    }
-    
-    .stat-box p {
-        font-size: 0.9rem;
+        padding: 20px;
     }
 }
 
@@ -514,40 +520,33 @@ footer .copyright {
     }
     
     .stats-container {
-        max-width: 250px;  /* 在更小的屏幕上进一步限制宽度 */
+        max-width: 250px;  /* 在更小的屏幕进一步限制宽度 */
     }
-}
-
-/* 统计卡片基础样式 */
-.stats-container {
-    margin-top: 50px;
-}
-
-.stat-box {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.stat-box h3 {
-    font-size: 2rem;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
 }
 
 /* 移动端适配 */
 @media (max-width: 768px) {
-    .stat-box {
-        padding: 20px;
+    .nav-container {
+        padding: 0 15px;
     }
     
-    .stat-box h3 {
-        font-size: 1.8rem;
+    .logo {
+        font-size: 20px;
     }
     
-    .stat-box p {
-        font-size: 0.9rem;
+    .nav-links {
+        gap: 20px;
     }
+    
+    .nav-links li a {
+        font-size: 14px;
+    }
+}
+
+/* 如果需要标题部分竖排，可以单独为标题部分添加一个容器 */
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
 }
