@@ -517,3 +517,37 @@ footer .copyright {
         max-width: 250px;  /* 在更小的屏幕上进一步限制宽度 */
     }
 }
+
+/* 统计卡片基础样式 */
+.stats-container {
+    margin-top: 50px;
+}
+
+.stat-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.stat-box h3 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .stat-box {
+        padding: 20px;
+    }
+    
+    .stat-box h3 {
+        font-size: 1.8rem;
+    }
+    
+    .stat-box p {
+        font-size: 0.9rem;
+    }
+}
