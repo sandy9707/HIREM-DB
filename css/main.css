@@ -378,6 +378,14 @@ footer {
     font-size: 14px;
 }
 
+footer p {
+    margin-bottom: 8px;  /* 段落间距 */
+}
+
+footer .copyright {
+    margin-top: 12px;    /* 版权信息上方多加点间距 */
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
     .links-container {
@@ -391,5 +399,121 @@ footer {
     
     .qr-code {
         margin: 30px auto 0;
+    }
+    
+    footer {
+        padding: 15px 0;
+        font-size: 12px;  /* 移动端字体稍小 */
+    }
+    
+    footer p {
+        margin-bottom: 6px;
+    }
+}
+
+/* 移动端导航栏样式 */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .nav-link {
+        padding: 0.5rem 0;
+    }
+    
+    /* 首页标题适配 */
+    #page1 h1 {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    /* 统计数据适配 */
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    /* 模块卡片适配 */
+    .module-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 更新容器样式使用Bootstrap的container */
+.container {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* 底部链接区域响应式 */
+@media (max-width: 768px) {
+    .links-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .link-group {
+        margin-bottom: 2rem;
+    }
+    
+    .qr-code {
+        margin: 2rem auto;
+    }
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    /* 首页标题适配 */
+    #page1 h1 {
+        font-size: 2rem;  /* 将标题字体从4.5rem缩小到2rem */
+        margin-bottom: 15px;
+    }
+    
+    .subtitle {
+        font-size: 1rem;  /* 副标题也相应缩小 */
+        margin-bottom: 30px;
+    }
+    
+    /* 统计数据竖排显示 */
+    .stats-container {
+        display: flex;
+        flex-direction: column;  /* 改为竖排 */
+        gap: 20px;
+        width: 100%;
+        max-width: 300px;  /* 限制最大宽度 */
+        margin: 0 auto;    /* 居中显示 */
+    }
+    
+    .stat-box {
+        width: 100%;
+        padding: 20px;     /* 稍微减小内边距 */
+    }
+    
+    .stat-box h3 {
+        font-size: 1.8rem; /* 数值字体也适当调小 */
+    }
+    
+    .stat-box p {
+        font-size: 0.9rem;
+    }
+}
+
+/* 确保在较小屏幕上内容居中 */
+@media (max-width: 576px) {
+    #page1 .container {
+        padding: 0 15px;
+    }
+    
+    .stats-container {
+        max-width: 250px;  /* 在更小的屏幕上进一步限制宽度 */
     }
 }
